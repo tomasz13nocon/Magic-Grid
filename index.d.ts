@@ -16,6 +16,8 @@ export interface MagicGridProps{
   useMin?: boolean;
   useTransform?: boolean;
   animate?: boolean;
+  duration?: number;
+  delay?: number;
 }
 
 export default MagicGrid;
