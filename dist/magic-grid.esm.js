@@ -90,6 +90,8 @@ var MagicGrid = function MagicGrid (config) {
   this.useTransform = config.useTransform;
   this.animate = config.animate || false;
   this.center = config.center;
+  this.duration = config.duration || 200;
+  this.delay = config.delay || 0;
   this.styledItems = new Set();
 };
 
@@ -112,7 +114,7 @@ MagicGrid.prototype.initStyles = function initStyles () {
     style.position = "absolute";
   
     if (this.animate) {
-      style.transition = (this.useTransform ? "transform" : "top, left") + " 0.2s ease";
+      style.transition = (this.useTransform ? "transform" : "top, left") + " " + (this.duration) + "ms ease " + (this.delay * i) + "ms";
     }
 
     this.styledItems.add(items[i]);
